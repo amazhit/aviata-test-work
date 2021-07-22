@@ -1,0 +1,29 @@
+$primary: #55BB06
+$blue: #7284E4
+$yellow: #FF9900
+$gray: #B9B9B9
+$light-gray: #F5F5F5
+$light-blue: #EAF0FA
+$dark: #707276
+$deep-dark: #202123
+$radius-sm: 4px
+
+// media
+$mobile: 768px
+$tablet: 991px
+$laptop: 1140px
+$desktop: 1440px
+
+@mixin breakpoint($point) 
+  @if $point == phone
+    @media (max-width: $mobile)
+        @content
+  @else if $point == tablet
+    @media (min-width: $mobile) and (max-width: $tablet)
+        @content
+  @else if $point == laptop
+    @media (min-width: $tablet) and (max-width: $laptop)
+        @content
+  @else if $point == desktop
+    @media (min-width: $laptop) and (max-width: $desktop)
+        @content
